@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "vercel dev",
+    "dev": "vercel dev --listen 0.0.0.0:3000",
     "start": "vercel start",
     "build": "echo 'Build complete - static files ready'",
     "type-check": "tsc --noEmit"

@@ -27,13 +27,13 @@
         let bypass = prompt('what url does your lanschool allow?');
         window.location.href = `#${bypass}`;
         let url = prompt('What url do you want to proxy?');
-        document.querySelector('iframe').src =  `/api/index.js?url=${url}`;
+        document.querySelector('iframe').src =  `/api?url=${url}`;
     } else if (window.location.href.includes('#null')) {
         window.location.href = '';
         let url = prompt('What url do you want to proxy?');
-        document.querySelector('iframe').src =  `/api/index.js?url=${url}`;
+        document.querySelector('iframe').src =  `/api?url=${url}`;
     } else {
         let url = prompt('What url do you want to proxy?');
-        document.querySelector('iframe').src =  `/api/index.js?url=${url}`;
+        document.querySelector('iframe').src =  `/api?url=${url}`;
     }
 </script>

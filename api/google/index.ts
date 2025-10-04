@@ -113,7 +113,7 @@ const handler: VercelHandler = async (req: ProxyRequest, res: VercelResponse): P
                     event.preventDefault();
                     const searchTerm = searchInput.value;
                     const searchUrl = 'https://www.google.com/search?q=' + encodeURIComponent(searchTerm);
-                    window.location.href = '/API/index.js?url=' + encodeURIComponent(searchUrl);
+                    window.location.href = '/api?url=' + encodeURIComponent(searchUrl);
                   }
                 });
               }

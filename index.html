@@ -11,8 +11,8 @@
         <div class="typewriter">
             <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
             <h1>
-                CamoAPI :  
-                
+                CamoAPI :
+
                 <span id="typingtext">
                 </span>
             </h1>
@@ -36,14 +36,14 @@
                 <p>Search Google</p>
                 <form id="customGoogleForm">
                     <input type="text" id="googlesearch" placeholder="Search Google" required />
-                </form>                
+                </form>
             </div>
             <div class="images box">
                 <h1>Image Support</h1>
                 <p>Images</p>
                 <div class="image-container">
-                    <img alt="not working at expected" src="/API/index.js?url=https://ikozmik.com/Content/Images/uploaded/its-free-featured.jpg">
-                    <img alt="not working at expected" src="/API/index.js?url=https://www.psdstack.com/wp-content/uploads/2019/08/copyright-free-images.jpg">
+                    <img alt="not working at expected" src="/api?url=https://ikozmik.com/Content/Images/uploaded/its-free-featured.jpg">
+                    <img alt="not working at expected" src="/api?url=https://www.psdstack.com/wp-content/uploads/2019/08/copyright-free-images.jpg">
                 </div>
             </div>
             <div class="images box">
@@ -51,11 +51,11 @@
                 <p>Search a URL</p>
                 <form id="customURLForm">
                     <input type="text" id="urlsearch" placeholder="Enter a full URL" required />
-                </form>                
+                </form>
             </div>
             <div class="github box">
                 <h1>Try Now</h1>
-                <p><a href="https://github.com/CamouflageNetwork/CamoAPI/">https://github.com/CamouflageNetwork/CamoAPI/</a></p>             
+                <p><a href="https://github.com/CamouflageNetwork/CamoAPI/">https://github.com/CamouflageNetwork/CamoAPI/</a></p>
             </div>
         </div>
     </div>
@@ -67,7 +67,7 @@
         const input = document.getElementById('googlesearch');
         const query = encodeURIComponent(input.value.trim());
         if (query) {
-            const proxiedURL = `/API/index.js?url=https://www.google.com/search?q=${query}`;
+            const proxiedURL = `/api?url=https://www.google.com/search?q=${query}`;
             window.location.href = proxiedURL;
         }
     });
@@ -77,7 +77,7 @@
         const rawUrl = input.value.trim();
         if (rawUrl) {
             const encodedUrl = encodeURIComponent(rawUrl);
-            const finalUrl = `/API/index.js?url=${encodedUrl}`;
+            const finalUrl = `/api?url=${encodedUrl}`;
             window.location.href = finalUrl;
         }
     });

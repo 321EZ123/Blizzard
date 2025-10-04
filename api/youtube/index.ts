@@ -59,7 +59,7 @@ const handler: VercelHandler = async (req: YouTubeProxyRequest, res: VercelRespo
           (function () {
             const videoId = "${videoId}";
             const iframe = document.createElement('iframe');
-            iframe.src = '/API/youtube/embed/index.js?url=https://www.youtube.com/embed/' + videoId;
+            iframe.src = '/api/youtube/embed?url=https://www.youtube.com/embed/' + videoId;
             iframe.style = 'width:100%; height:100%; border:none; position:absolute; top:0; left:0; z-index:1;';
             iframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
             iframe.allowFullscreen = true;
