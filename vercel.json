@@ -4,11 +4,5 @@
       "memory": 1024,
       "maxDuration": 30
     }
-  },
-  "builds": [
-    {
-      "src": "api/**/*.ts",
-      "use": "@vercel/node"
-    }
-  ]
+  }
 }
