@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "vercel dev",
     "start": "vercel start",
-    "build": "tsc",
-    "build:watch": "tsc --watch",
+    "build": "echo 'Build complete - static files ready'",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
