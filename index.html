@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CamoAPI</title>
+    <title>BlizzardStorm</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,14 +11,14 @@
         <div class="typewriter">
             <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
             <h1>
-                CamoAPI :
+                BlizzardStorm :
 
-                <span id="typingtext">
+                <span id="glaciertext">
                 </span>
             </h1>
             <script>
-                var typed = new Typed('#typingtext', {
-                strings: [`"it's insane" - Petezah`, '"yeah its nice" - | Oreo |', '"How bruh" - RHW', '"it loads so fast tho" - Petezah'],
+                var frostTyper = new Typed('#glaciertext', {
+                strings: [`"it's freezing fast" - IceUser`, '"lightning quick storm" - | Frost |', '"How frozen bruh" - ColdWind', '"it loads like a blizzard tho" - IceUser'],
                 typeSpeed: 100,
                 backSpeed: 100,
                 backDelay: 100,
@@ -26,59 +26,59 @@
                 loopCount: Infinity,
                 startDelay: 500,
                 backDelay: 2500,
-                cursorChar: '|',
+                cursorChar: '❄',
                 });
             </script>
         </div>
         <div class="search">
             <div class="google box">
-                <h1>Google Support</h1>
-                <p>Search Google</p>
-                <form id="customGoogleForm">
-                    <input type="text" id="googlesearch" placeholder="Search Google" required />
+                <h1>Glacier Support</h1>
+                <p>Search Through The Storm</p>
+                <form id="customStormForm">
+                    <input type="text" id="glaciersearch" placeholder="Search Through Blizzard" required />
                 </form>
             </div>
             <div class="images box">
-                <h1>Image Support</h1>
+                <h1>Frozen Assets</h1>
                 <p>Images</p>
                 <div class="image-container">
-                    <img alt="not working at expected" src="/api?url=https://ikozmik.com/Content/Images/uploaded/its-free-featured.jpg">
-                    <img alt="not working at expected" src="/api?url=https://www.psdstack.com/wp-content/uploads/2019/08/copyright-free-images.jpg">
+                    <img alt="frozen content loading" src="/storm/index.js?targetDestination=https://ikozmik.com/Content/Images/uploaded/its-free-featured.jpg">
+                    <img alt="frozen content loading" src="/storm/index.js?targetDestination=https://www.psdstack.com/Content/Images/uploaded/copyright-free-images.jpg">
                 </div>
             </div>
             <div class="images box">
-                <h1>Try Now</h1>
-                <p>Search a URL</p>
-                <form id="customURLForm">
-                    <input type="text" id="urlsearch" placeholder="Enter a full URL" required />
+                <h1>Storm Access</h1>
+                <p>Navigate URL</p>
+                <form id="customDestinationForm">
+                    <input type="text" id="destinationsearch" placeholder="Enter a destination URL" required />
                 </form>
             </div>
             <div class="github box">
-                <h1>Try Now</h1>
-                <p><a href="https://github.com/CamouflageNetwork/CamoAPI/">https://github.com/CamouflageNetwork/CamoAPI/</a></p>
+                <h1>Source Code</h1>
+                <p><a href="https://github.com/YourUsername/BlizzardStorm/">https://github.com/YourUsername/BlizzardStorm/</a></p>
             </div>
         </div>
     </div>
 </body>
 </html>
 <script>
-    document.getElementById('customGoogleForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const input = document.getElementById('googlesearch');
-        const query = encodeURIComponent(input.value.trim());
-        if (query) {
-            const proxiedURL = `/api?url=https://www.google.com/search?q=${query}`;
-            window.location.href = proxiedURL;
+    document.getElementById('customStormForm').addEventListener('submit', function(winterEvent) {
+        winterEvent.preventDefault();
+        const stormInput = document.getElementById('glaciersearch');
+        const searchQuery = encodeURIComponent(stormInput.value.trim());
+        if (searchQuery) {
+            const glacierURL = `/storm/index.js?targetDestination=https://www.google.com/search?q=${searchQuery}`;
+            window.location.href = glacierURL;
         }
     });
-    document.getElementById('customURLForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const input = document.getElementById('urlsearch');
-        const rawUrl = input.value.trim();
-        if (rawUrl) {
-            const encodedUrl = encodeURIComponent(rawUrl);
-            const finalUrl = `/api?url=${encodedUrl}`;
-            window.location.href = finalUrl;
+    document.getElementById('customDestinationForm').addEventListener('submit', function(winterEvent) {
+        winterEvent.preventDefault();
+        const destinationInput = document.getElementById('destinationsearch');
+        const rawDestination = destinationInput.value.trim();
+        if (rawDestination) {
+            const encodedDestination = encodeURIComponent(rawDestination);
+            const finalDestination = `/storm/index.js?targetDestination=${encodedDestination}`;
+            window.location.href = finalDestination;
         }
     });
 </script>

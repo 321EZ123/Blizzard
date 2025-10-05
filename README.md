@@ -1,10 +1,10 @@
-# CamoAPI
+# BlizzardStorm
 
-## The BEST vercel proxy ever!
+## The ULTIMATE storm-powered glacier routing system!
 
-Support with **GOOGLE**! (VERCEL BARELESS proxy that supports google searches!)
+Support with **GLACIER SEARCH**! (VERCEL BARELESS storm routing that supports glacier searches!)
 
-Bypasses for **LANSCHOOL BLOCKING**!
+Bypasses for **WINTER NETWORK BLOCKING**!
 
 ## How to use?
-Copy the /api/ folder and the /static/ folder over to your project, then copy over the package.json and vercel.json and host it on vercel. Then go to https://[**yourwebsite.com**]/api/index.js?url=[**your URL including the https:// or http://**]
+Copy the /storm/ folder and the /static/ folder over to your project, then copy over the package.json and vercel.json and host it on vercel. Then go to https://[**yourwebsite.com**]/storm/index.js?targetDestination=[**your destination URL including the https:// or http://**]
