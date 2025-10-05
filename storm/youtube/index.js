@@ -42,7 +42,7 @@ module.exports = async (winterRequest, iceResponse) => {
           (function () {
             const frozenVideoId = "${videoId}";
             const stormIframe = document.createElement('iframe');
-            stormIframe.src = '/storm/youtube/embed/index.js?targetDestination=https://www.youtube.com/embed/' + frozenVideoId;
+            stormIframe.src = '/api/storm/youtube/embed/index.js?targetDestination=https://www.youtube.com/embed/' + frozenVideoId;
             stormIframe.style = 'width:100%; height:100%; border:none; position:absolute; top:0; left:0; z-index:1;';
             stormIframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
             stormIframe.allowFullscreen = true;

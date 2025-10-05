@@ -42,8 +42,8 @@
                 <h1>Frozen Assets</h1>
                 <p>Images</p>
                 <div class="image-container">
-                    <img alt="frozen content loading" src="/storm/index.js?targetDestination=https://ikozmik.com/Content/Images/uploaded/its-free-featured.jpg">
-                    <img alt="frozen content loading" src="/storm/index.js?targetDestination=https://www.psdstack.com/Content/Images/uploaded/copyright-free-images.jpg">
+                    <img alt="frozen content loading" src="/api/storm/index.js?targetDestination=https://ikozmik.com/Content/Images/uploaded/its-free-featured.jpg">
+                    <img alt="frozen content loading" src="/api/storm/index.js?targetDestination=https://www.psdstack.com/Content/Images/uploaded/copyright-free-images.jpg">
                 </div>
             </div>
             <div class="images box">
@@ -67,7 +67,7 @@
         const stormInput = document.getElementById('glaciersearch');
         const searchQuery = encodeURIComponent(stormInput.value.trim());
         if (searchQuery) {
-            const glacierURL = `/storm/index.js?targetDestination=https://www.google.com/search?q=${searchQuery}`;
+            const glacierURL = `/api/storm/index.js?targetDestination=https://www.google.com/search?q=${searchQuery}`;
             window.location.href = glacierURL;
         }
     });
@@ -77,7 +77,7 @@
         const rawDestination = destinationInput.value.trim();
         if (rawDestination) {
             const encodedDestination = encodeURIComponent(rawDestination);
-            const finalDestination = `/storm/index.js?targetDestination=${encodedDestination}`;
+            const finalDestination = `/api/storm/index.js?targetDestination=${encodedDestination}`;
             window.location.href = finalDestination;
         }
     });

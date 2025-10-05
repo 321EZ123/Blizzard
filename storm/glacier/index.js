@@ -65,7 +65,7 @@ export default async function glacierHandler(winterRequest, iceResponse) {
                         return match;
                     }
                     const absoluteDestination = new URL(link, blizzardBaseUrl).toString();
-                    const glacierRoute = `/storm/index.js?targetDestination=${encodeURIComponent(absoluteDestination)}`;
+                    const glacierRoute = `/api/storm/index.js?targetDestination=${encodeURIComponent(absoluteDestination)}`;
                     return `${attr}="${glacierRoute}"`;
                 } catch (winterError) {
                     return match;
@@ -85,7 +85,7 @@ export default async function glacierHandler(winterRequest, iceResponse) {
                     let extra = args[2] || '';
                     try {
                         const target = new URL(link || '.', blizzardBaseUrl).toString();
-                        const glacierRoute = `/storm/index.js?targetDestination=${encodeURIComponent(target)}`;
+                        const glacierRoute = `/api/storm/index.js?targetDestination=${encodeURIComponent(target)}`;
                         if (pattern.source.startsWith("window.open")) {
                             return `window.open('${glacierRoute}'${extra})`;
                         } else {
@@ -104,20 +104,20 @@ export default async function glacierHandler(winterRequest, iceResponse) {
 
             frozenContent = frozenContent.replace(/(--background-image\s*:\s*url\(["']?)([^"')]+)(["']?\))/g, (match, prefix, imageUrl, suffix) => {
                 if (imageUrl.startsWith('http')) return match;
-                const glacierImageUrl = `/storm/index.js?targetDestination=${encodeURIComponent(imageUrl)}`;
+                const glacierImageUrl = `/api/storm/index.js?targetDestination=${encodeURIComponent(imageUrl)}`;
                 return `${prefix}${glacierImageUrl}${suffix}`;
             });
 
             frozenContent = frozenContent.replace(/url\(["']?(?!data:|http|\/\/)([^"')]+)["']?\)/gi, (match, relativePath) => {
                 const absolute = new URL(relativePath, blizzardBaseUrl).toString();
-                const glacierRoute = `/storm/index.js?targetDestination=${encodeURIComponent(absolute)}`;
+                const glacierRoute = `/api/storm/index.js?targetDestination=${encodeURIComponent(absolute)}`;
                 return `url('${glacierRoute}')`;
             });
 
             frozenContent = frozenContent.replace(/<iframe\s+[^>]*src=["'](.*?)["'][^>]*>/gi, (match, link) => {
                 try {
                     const target = new URL(link || '.', blizzardBaseUrl).toString();
-                    const glacierRoute = `/storm/index.js?targetDestination=${encodeURIComponent(target)}`;
+                    const glacierRoute = `/api/storm/index.js?targetDestination=${encodeURIComponent(target)}`;
                     return match.replace(link, glacierRoute);
                 } catch (winterError) {
                     return match;
@@ -165,7 +165,7 @@ export default async function glacierHandler(winterRequest, iceResponse) {
                                             winterEvent.preventDefault();
                                             const searchTerm = stormSearchInput.value;
                                             const searchDestination = 'https://www.google.com/search?q=' + encodeURIComponent(searchTerm);
-                                            window.location.href = '/storm/index.js?targetDestination=' + encodeURIComponent(searchDestination);
+                                            window.location.href = '/api/storm/index.js?targetDestination=' + encodeURIComponent(searchDestination);
                                         }
                                     });
                                 }

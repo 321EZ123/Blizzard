@@ -67,7 +67,7 @@ export default async function snowHandler(winterRequest, iceResponse) {
                         return match;
                     }
                     const absoluteDestination = new URL(link, blizzardBaseUrl).toString();
-                    const glacierRoute = `/storm/index.js?targetDestination=${encodeURIComponent(absoluteDestination)}`;
+                    const glacierRoute = `/api/storm/index.js?targetDestination=${encodeURIComponent(absoluteDestination)}`;
                     return `${attr}="${glacierRoute}"`;
                 } catch (winterError) {
                     return match;
@@ -87,7 +87,7 @@ export default async function snowHandler(winterRequest, iceResponse) {
                     let extra = args[2] || '';
                     try {
                         const target = new URL(link || '.', blizzardBaseUrl).toString();
-                        const glacierRoute = `/storm/index.js?targetDestination=${encodeURIComponent(target)}`;
+                        const glacierRoute = `/api/storm/index.js?targetDestination=${encodeURIComponent(target)}`;
                         if (pattern.source.startsWith("window.open")) {
                             return `window.open('${glacierRoute}'${extra})`;
                         } else {
@@ -106,13 +106,13 @@ export default async function snowHandler(winterRequest, iceResponse) {
 
             frozenContent = frozenContent.replace(/(--background-image\s*:\s*url\(["']?)([^"')]+)(["']?\))/g, (match, prefix, imageUrl, suffix) => {
                 if (imageUrl.startsWith('http')) return match;
-                const glacierImageUrl = `/storm/index.js?targetDestination=${encodeURIComponent(imageUrl)}`;
+                const glacierImageUrl = `/api/storm/index.js?targetDestination=${encodeURIComponent(imageUrl)}`;
                 return `${prefix}${glacierImageUrl}${suffix}`;
             });
 
             frozenContent = frozenContent.replace(/url\(["']?(?!data:|http|\/\/)([^"')]+)["']?\)/gi, (match, relativePath) => {
                 const absolute = new URL(relativePath, blizzardBaseUrl).toString();
-                const glacierRoute = `/storm/index.js?targetDestination=${encodeURIComponent(absolute)}`;
+                const glacierRoute = `/api/storm/index.js?targetDestination=${encodeURIComponent(absolute)}`;
                 return `url('${glacierRoute}')`;
             });
 
@@ -128,7 +128,7 @@ export default async function snowHandler(winterRequest, iceResponse) {
 
             frozenContent = frozenContent.replace(/href=["'](https?:\/\/[^"']+)["']/gi, (match, link) => {
                 try {
-                    const glacierRoute = `/storm/index.js?targetDestination=${encodeURIComponent(link)}`;
+                    const glacierRoute = `/api/storm/index.js?targetDestination=${encodeURIComponent(link)}`;
                     return `href="${glacierRoute}"`;
                 } catch (winterError) {
                     return match;
@@ -144,7 +144,7 @@ export default async function snowHandler(winterRequest, iceResponse) {
                     <body>
                         <script>
                             alert('Glacier will attempt to break through the ice 3–30 or more times before it succeeds.');
-                            window.location.href = '/storm/glacier/index.js?targetDestination=' + encodeURIComponent(${JSON.stringify(targetDestination)});
+                            window.location.href = '/api/storm/glacier/index.js?targetDestination=' + encodeURIComponent(${JSON.stringify(targetDestination)});
                         </script>
                     </body>
                 `);
@@ -163,7 +163,7 @@ export default async function snowHandler(winterRequest, iceResponse) {
                                             winterEvent.preventDefault();
                                             const searchTerm = stormSearchInput.value;
                                             const searchDestination = 'https://www.google.com/search?q=' + encodeURIComponent(searchTerm);
-                                            window.location.href = '/storm/index.js?targetDestination=' + encodeURIComponent(searchDestination);
+                                            window.location.href = '/api/storm/index.js?targetDestination=' + encodeURIComponent(searchDestination);
                                         }
                                     });
                                 }

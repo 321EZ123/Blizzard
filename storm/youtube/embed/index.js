@@ -39,7 +39,7 @@ module.exports = async (winterRequest, iceResponse) => {
     frostCheerio('img').each((i, el) => {
       const imageSrc = frostCheerio(el).attr('src');
       if (imageSrc && !imageSrc.startsWith('http')) {
-        frostCheerio(el).attr('src', `/storm/index.js?targetDestination=${encodeURIComponent(imageSrc)}`);
+        frostCheerio(el).attr('src', `/api/storm/index.js?targetDestination=${encodeURIComponent(imageSrc)}`);
       }
     });
 
@@ -47,7 +47,7 @@ module.exports = async (winterRequest, iceResponse) => {
     frostCheerio('a').each((i, el) => {
       const linkHref = frostCheerio(el).attr('href');
       if (linkHref && !linkHref.startsWith('http')) {
-        frostCheerio(el).attr('href', `/storm/index.js?targetDestination=${encodeURIComponent(linkHref)}`);
+        frostCheerio(el).attr('href', `/api/storm/index.js?targetDestination=${encodeURIComponent(linkHref)}`);
       }
     });
 
@@ -55,12 +55,12 @@ module.exports = async (winterRequest, iceResponse) => {
     frostCheerio('video').each((i, el) => {
       const videoPoster = frostCheerio(el).attr('poster');
       if (videoPoster && !videoPoster.startsWith('http')) {
-        frostCheerio(el).attr('poster', `/storm/index.js?targetDestination=${encodeURIComponent(videoPoster)}`);
+        frostCheerio(el).attr('poster', `/api/storm/index.js?targetDestination=${encodeURIComponent(videoPoster)}`);
       }
 
       const videoSrc = frostCheerio(el).attr('src');
       if (videoSrc && !videoSrc.startsWith('http')) {
-        frostCheerio(el).attr('src', `/storm/index.js?targetDestination=${encodeURIComponent(videoSrc)}`);
+        frostCheerio(el).attr('src', `/api/storm/index.js?targetDestination=${encodeURIComponent(videoSrc)}`);
       }
     });
 
@@ -68,7 +68,7 @@ module.exports = async (winterRequest, iceResponse) => {
     frostCheerio('form').each((i, el) => {
       const formAction = frostCheerio(el).attr('action');
       if (formAction && !formAction.startsWith('http')) {
-        frostCheerio(el).attr('action', `/storm/index.js?targetDestination=${encodeURIComponent(formAction)}`);
+        frostCheerio(el).attr('action', `/api/storm/index.js?targetDestination=${encodeURIComponent(formAction)}`);
       }
     });
 
