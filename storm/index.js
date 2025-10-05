@@ -143,7 +143,7 @@ export default async function snowHandler(winterRequest, iceResponse) {
                 return iceResponse.send(`
                     <body>
                         <script>
-                            alert('Glacier will attempt to break through the ice 3–30 or more times before it succeeds.');
+                            alert('Google will attempt to break through the ice 3–30 or more times before it succeeds.');
                             window.location.href = '/api/storm/glacier/index.js?targetDestination=' + encodeURIComponent(${JSON.stringify(targetDestination)});
                         </script>
                     </body>
